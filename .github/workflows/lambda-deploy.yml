@@ -18,7 +18,7 @@ jobs:
 # sets up Python 3.13 environment
 
     - name: Set up Python 3.13
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: 3.13
 
