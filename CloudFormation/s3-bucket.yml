@@ -16,7 +16,7 @@ Resources:
   MyS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
+      BucketName: !Sub '${AWS::StackName}-${Environment}-bucket-new'
       ForceDestroy: true # This will allow the bucket to be deleted even if it's not empty
       Tags:
         - Key: Environment
