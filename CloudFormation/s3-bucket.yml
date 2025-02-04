@@ -1,5 +1,5 @@
 AWSCloudformationTemplateFormatVersion: '2010-09-09'
-Description: 'Create an S3 bucket and a pull pipeline'
+Description: 'Create an S3 bucket and a pr (pull request) pipeline'
 
 Parameters:
   Environment:
@@ -10,13 +10,14 @@ Parameters:
       - 'test'
       - 'staging'
       - 'prod'
-    ConstraintDescription: 'Must specify dev, staging, or prod'
+    ConstraintDescription: 'Must specify test, staging, or prod'
 
 Resources:
   MyS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
+      ForceDestroy: true # This will allow the bucket to be deleted even if it's not empty
     Tags:
       - Key: 'Environment'
         Value: !Ref Environment
