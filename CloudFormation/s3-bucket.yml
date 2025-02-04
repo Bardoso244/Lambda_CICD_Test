@@ -19,7 +19,7 @@ Resources:
       BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
       ForceDestroy: true # This will allow the bucket to be deleted even if it's not empty
       Tags:
-        - Key: 'Environment'
+        - Key: Environment
           Value: !Ref Environment
 
   Outputs:
